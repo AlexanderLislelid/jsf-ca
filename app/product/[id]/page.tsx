@@ -1,4 +1,5 @@
 import { Product } from "@/types/product";
+import Image from "next/image";
 
 async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -11,8 +12,24 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
     <div>
       <h1 className="text-2xl font-bold mb-4">{product.title}</h1>
 
+      {product.image && product.image.url ? (
+        <Image
+          src={product.image.url}
+          alt={product.image.alt}
+          width={500}
+          height={500}
+        />
+      ) : (
+        <Image
+          src="/placeholderShopImage.webp"
+          alt="Placeholder image"
+          width={500}
+          height={500}
+        />
+      )}
+
       {product.reviews.length > 0 ? (
-        <div>
+        <div className="my-6 mx-6">
           <h2 className="text-xl font-semibold mb-2">Reviews</h2>
           <ul>
             {product.reviews.map((review) => (
