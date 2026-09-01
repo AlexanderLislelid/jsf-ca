@@ -1,11 +1,30 @@
-import ProductList from "@/components/cards/ProductList";
+import ProductCard from "@/components/cards/ProductCard";
+import { Product } from "@/types/product";
 
-export default function Home() {
+interface ApiResponse {
+  data: Product[];
+}
+
+async function Home() {
+  const response = await fetch("https://v2.api.noroff.dev/online-shop/");
+
+  if (!response.ok) {
+    console.error("Failed to fetch products", response.statusText);
+    return <p>Failed to load products</p>;
+  }
+
+  const result: ApiResponse = await response.json();
+  const products = result.data;
+
   return (
-    <div>
-      <main>
-        <ProductList />
-      </main>
+    <div className="p-6">
+      <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default Home;
