@@ -17,11 +17,13 @@ async function ProductList() {
   const products = result.data;
 
   return (
-    <ul>
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </ul>
+    <div className="p-6">
+      <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
