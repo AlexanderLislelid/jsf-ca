@@ -1,4 +1,5 @@
-import ProductCard, { Product } from "@/components/cards/ProductCard";
+import ProductCard from "@/components/cards/ProductCard";
+import { Product } from "@/types/product";
 
 interface ApiResponse {
   data: Product[];
