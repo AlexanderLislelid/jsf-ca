@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { Product } from "@/types/product";
 import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 interface ProductCardProps {
   product: Product;
@@ -19,14 +26,26 @@ function ProductCard({
 }: ProductCardProps) {
   return (
     <li>
-      <Link href={`/product/${id}`}>
-        <h2>{title}</h2>
-        <Image src={url} alt={alt} width={300} height={300} />
-        <p>{rating}</p>
-        <p>{price}</p>
-        <p>{discountedPrice}</p>
-        <p>{description}</p>
-      </Link>
+      <Card>
+        <Link href={`/product/${id}`}>
+          <CardHeader>
+            <CardTitle>{title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Image
+              src={url}
+              alt={alt}
+              width={300}
+              height={300}
+              style={{ width: "100%", height: "auto" }}
+            />
+            <p>{rating}</p>
+            <p>{price}</p>
+            <p>{discountedPrice}</p>
+            <CardDescription>{description}</CardDescription>
+          </CardContent>
+        </Link>
+      </Card>
     </li>
   );
 }
