@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const contactFormSchema = z.object({
-  fullname: z
+  fullName: z
     .string()
     .trim()
     .min(3, "Full name is required, (3 characters minimum)"),
