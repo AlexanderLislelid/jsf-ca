@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Product } from "@/types/product";
 import Link from "next/link";
+import { Tag } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -24,12 +25,21 @@ function ProductCard({
     description,
   },
 }: ProductCardProps) {
+  const discountPercentage = Math.round(
+    ((price - discountedPrice) / price) * 100,
+  );
+
   return (
     <li>
-      <Card className="max-w-62.5 h-full">
+      <Card className="max-w-62.5 h-full hover:scale-101 hover:shadow-xl">
         <Link href={`/product/${id}`} className="flex flex-col h-full">
           <CardHeader>
             <CardTitle>{title}</CardTitle>
+            {discountedPrice < price ? (
+              <span className="flex items-center gap-1 text-end text-green-600">
+                <Tag className="size-4" /> - {discountPercentage}%
+              </span>
+            ) : null}
           </CardHeader>
           <CardContent className="flex flex-col flex-1">
             <Image
