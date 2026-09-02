@@ -24,12 +24,15 @@ export default function ProductSearch({ products }: { products: Product[] }) {
         placeholder="Search for products"
         className="px-4 py-2 rounded-md border my-4"
       />
-
-      <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </ul>
+      {filteredProducts.length === 0 ? (
+        <p>No available products named {search}</p>
+      ) : (
+        <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
