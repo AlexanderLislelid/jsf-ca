@@ -23,3 +23,12 @@ subsets: ["latin"],
 
 * Learned that I already had lucide-react (a React icon library) installed in the project, ready to use.. I didn't know this beforehand.
   got suggestion on how to import and use
+
+## Smoother hover effect on cards
+
+- needed help creating a smoother hover effect on product cards
+
+* got suggestion: transition-all duration-200 hover:-translate-y-1 hover:shadow-xl
+  used it and it looks good
+
+  02.09.26
