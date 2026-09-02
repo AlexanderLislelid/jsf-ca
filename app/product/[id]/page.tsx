@@ -7,7 +7,6 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
   const data = await response.json();
   const product: Product = data.data;
 
-  console.log(product);
   return (
     <div className="m-8 flex flex-col gap-6">
       <h1 className="text-2xl font-bold">{product.title}</h1>
