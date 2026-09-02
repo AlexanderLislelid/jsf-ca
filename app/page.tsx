@@ -17,7 +17,7 @@ async function Home() {
   const products = result.data;
 
   return (
-    <div className="p-6">
+    <div className="p-6 mx-auto">
       <ul className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
