@@ -49,14 +49,14 @@ function ProductCard({
             ) : null}
           </div>
           <CardHeader className="gap-1 px-3">
-            <CardTitle className="line-clamp-1">{title}</CardTitle>
+            <CardTitle className="line-clamp-1 mt-2">{title}</CardTitle>
             <span className="flex items-center gap-1 text-sm text-muted-foreground">
               <Star className="size-3.5 fill-yellow-400 text-yellow-400" />
               {rating.toFixed(1)}
             </span>
           </CardHeader>
           <CardContent className="flex flex-col flex-1 px-3 pb-3">
-            <CardDescription className="line-clamp-2">
+            <CardDescription className="line-clamp-2 my-1">
               {description}
             </CardDescription>
             <div className="mt-auto pt-2 flex items-baseline justify-end gap-2">
