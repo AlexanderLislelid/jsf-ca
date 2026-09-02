@@ -1,5 +1,5 @@
 import ProductCard from "@/components/cards/ProductCard";
-import ProductSearch from "@/components/Search";
+import ProductSearch from "@/components/ProductSearch";
 import { Product } from "@/types/product";
 
 interface ApiResponse {
