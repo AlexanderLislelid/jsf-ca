@@ -1,66 +1,93 @@
 "use client";
 
-import type { ContactForm } from "@/types/contactForm";
-import { useState } from "react";
-
-const initialForm: ContactForm = {
-  fullname: "",
-  subject: "",
-  email: "",
-  message: "",
-};
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  contactFormSchema,
+  type ContactFormValues,
+} from "@/lib/validation/contactForm";
 
 export default function ContactForm() {
-  const [form, setForm] = useState<ContactForm>(initialForm);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    mode: "onBlur",
+  });
+
+  const onSubmit = (data: ContactFormValues) => {
+    console.log(data);
+  };
 
   return (
     <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        console.log(form);
-      }}
-      className="flex flex-col gap-1 p-4 max-w-md"
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col gap-1 p-4"
+      noValidate
     >
-      <label htmlFor="fullname">Full name</label>
-      <input
-        type="text"
-        id="fullname"
-        value={form.fullname}
-        onChange={(e) => setForm({ ...form, fullname: e.target.value })}
-        className="px-4 py-2 rounded-md border mb-2"
-      />
+      <div className="mb-2">
+        <label htmlFor="fullame">Full name</label>
+        <input
+          type="text"
+          id="fullname"
+          {...register("fullName")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.fullName && (
+          <p id="fullname-error" role="alert" className="text-sm text-red-600">
+            {errors.fullName.message}
+          </p>
+        )}
+      </div>
 
-      <label htmlFor="subject">Subject</label>
-      <input
-        type="text"
-        id="subject"
-        value={form.subject}
-        onChange={(e) => setForm({ ...form, subject: e.target.value })}
-        className="px-4 py-2 rounded-md border mb-2"
-      />
+      <div className="mb-2">
+        <label htmlFor="subject">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          {...register("subject")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.subject && (
+          <p id="subject-error" role="alert" className="text-sm text-red-600">
+            {errors.subject.message}
+          </p>
+        )}
+      </div>
 
-      <label htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        value={form.email}
-        onChange={(e) => setForm({ ...form, email: e.target.value })}
-        className="px-4 py-2 rounded-md border mb-2"
-      />
+      <div className="mb-2">
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          {...register("email")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.email && (
+          <p id="email-error" role="alert" className="text-sm text-red-600">
+            {errors.email.message}
+          </p>
+        )}
+      </div>
 
-      <label htmlFor="message">Message</label>
-      <textarea
-        id="message"
-        rows={5}
-        value={form.message}
-        onChange={(e) => setForm({ ...form, message: e.target.value })}
-        className="px-4 py-2 rounded-md border mb-2"
-      />
+      <div className="mb-2">
+        <label htmlFor="message">Message</label>
+        <textarea
+          id="message"
+          rows={5}
+          {...register("message")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.message && (
+          <p id="message-error" role="alert" className="text-sm text-red-600">
+            {errors.message.message}
+          </p>
+        )}
+      </div>
 
-      <button
-        type="submit"
-        className="mt-2 px-4 py-2 rounded-md bg-primary text-primary-foreground"
-      >
+      <button type="submit" className="mt-2 px-4 py-2 rounded-md">
         Send
       </button>
     </form>
