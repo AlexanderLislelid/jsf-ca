@@ -10,28 +10,37 @@ export default function CartPage() {
 
   return (
     <div>
-      <h2>Shopping cart</h2>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            <h3>{item.name}</h3>
-            <img src={item.image} alt={item.name} />
-            <div>
-              <button
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
-              <p>{item.quantity}</p>
-              <button
-                onClick={() => updateQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {items.length === 0 ? (
+        <div>
+          <h2>Your shopping cart is empty</h2>
+          <Link href={"/"}>Browse Products</Link>
+        </div>
+      ) : (
+        <div>
+          <h2>Shopping cart</h2>
+          <ul>
+            {items.map((item) => (
+              <li key={item.id}>
+                <h3>{item.name}</h3>
+                <img src={item.image} alt={item.name} />
+                <div>
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                  >
+                    +
+                  </button>
+                  <p>{item.quantity}</p>
+                  <button
+                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                  >
+                    -
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
