@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Logo from "../Logo";
+import CartItemQty from "../CartItemQty";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -34,6 +35,7 @@ export default function Navbar() {
             </Link>
           );
         })}
+        <CartItemQty />
       </div>
     </nav>
   );
