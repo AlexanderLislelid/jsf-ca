@@ -32,3 +32,13 @@ subsets: ["latin"],
   used it and it looks good
 
   02.09.26
+
+## Type Zustand cartstore with typescript
+
+- Needed help typing cartStore.ts (followed the module 2 example of creating a cart store in javascipt)
+
+* learned to use<CartState>() to type the entire zustand store (state + actions)
+
+  Also got a suggestion for a productToCartItem helper function to map Product -> CartItem instead of mixing the whole Product object into the shopping cart.
+
+  03.09.26
