@@ -47,8 +47,6 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
         <p>{product.rating}/5 ☆</p>
       </div>
 
-      {/*  note to self- create button component with add to cart functionality  */}
-
       <AddToCartButton product={product} />
 
       {product.reviews.length > 0 ? (
