@@ -1,3 +1,4 @@
+import AddToCartButton from "@/components/buttons/AddToCartButton";
 import { Product } from "@/types/product";
 import Image from "next/image";
 
@@ -48,7 +49,7 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
 
       {/*  note to self- create button component with add to cart functionality  */}
 
-      <button>Add to cart</button>
+      <AddToCartButton product={product} />
 
       {product.reviews.length > 0 ? (
         <div>
