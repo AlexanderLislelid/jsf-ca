@@ -19,34 +19,51 @@ export default function CartPage() {
       ) : (
         <div>
           <h2>Shopping cart</h2>
-          <ul className="flex flex-col gap-6">
+          <ul className="flex flex-col gap-3">
             {items.map((item) => (
               <li
                 key={item.id}
-                className="flex items-center border-2 rounded-2xl px-4 py-2"
+                className="flex flex-col gap-3 border-2 rounded-xl px-4 py-3"
               >
-                <h3>{item.name}</h3>
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  height={75}
-                  width={75}
-                  className="rounded-lg"
-                />
-                <div className="flex gap-2 items-center p-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-semibold truncate">{item.name}</h3>
                   <button
-                    onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                    className="bg-blue-500 p-1 border border-gray-500 rounded hover:bg-blue-600"
+                    onClick={() => removeItem(item.id)}
+                    className="text-sm text-gray-500 hover:text-red-600"
                   >
-                    <Plus size={"16px"} className="text-white" />
+                    Remove
                   </button>
-                  <p>{item.quantity}</p>
-                  <button
-                    onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                    className="bg-blue-500 p-1 border border-gray-500 rounded hover:bg-blue-600"
-                  >
-                    <Minus size={"16px"} className="text-white" />
-                  </button>
+                </div>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    height={75}
+                    width={75}
+                    className="rounded-lg"
+                  />
+                  <div className="flex flex-col items-start gap-2">
+                    <div className="flex gap-2 items-center">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
+                        className="bg-blue-500 p-1 border border-gray-500 rounded hover:bg-blue-600"
+                      >
+                        <Plus size={"16px"} className="text-white" />
+                      </button>
+                      <p>{item.quantity}</p>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
+                        className="bg-blue-500 p-1 border border-gray-500 rounded hover:bg-blue-600"
+                      >
+                        <Minus size={"16px"} className="text-white" />
+                      </button>
+                    </div>
+                    <div>{(item.price * item.quantity).toFixed(2)} kr</div>
+                  </div>
                 </div>
               </li>
             ))}
