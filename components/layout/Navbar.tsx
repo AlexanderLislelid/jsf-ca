@@ -15,7 +15,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-4 p-4 text-white justify-between">
+    <nav className="flex gap-4 p-4 text-white justify-between max-w-300 w-full mx-auto items-center">
       <Logo />
       <div className="flex gap-4">
         {navItems.map((item) => {
