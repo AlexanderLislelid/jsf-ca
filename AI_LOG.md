@@ -42,3 +42,11 @@ subsets: ["latin"],
   Also got a suggestion for a productToCartItem helper function to map Product -> CartItem instead of mixing the whole Product object into the shopping cart.
 
   03.09.26
+
+## redirecting to success page after checkout
+
+- asked if I could use Link to redirect after user clicks checkout.
+
+* Learned that if i wanted to programatically navigate a user I should use useRouter().push() inside my onsubmit function
+
+  05.09.26
