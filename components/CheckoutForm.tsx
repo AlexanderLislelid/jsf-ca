@@ -2,12 +2,14 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import {
   checkoutFormSchema,
   type CheckoutFormValues,
 } from "@/lib/validation/checkoutForm";
 
 export default function CheckoutForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -19,6 +21,7 @@ export default function CheckoutForm() {
 
   const onSubmit = (data: CheckoutFormValues) => {
     console.log(data);
+    router.push("/checkout/success");
   };
 
   return (
