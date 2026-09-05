@@ -1,5 +1,6 @@
 import AddToCartButton from "@/components/buttons/AddToCartButton";
 import { Product } from "@/types/product";
+import { Star } from "lucide-react";
 import Image from "next/image";
 
 async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
@@ -17,6 +18,7 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
           alt={product.image.alt}
           width={500}
           height={500}
+          loading="eager"
         />
       ) : (
         <Image
@@ -46,7 +48,9 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
       </div>
       <div>
         <h3 className="text-lg font-semibold">Overall rating:</h3>
-        <p>{product.rating}/5 ☆</p>
+        <p className="flex items-center">
+          {product.rating}/5 <Star className="text-yellow-500 w-4 h-4 ml-1" />
+        </p>
       </div>
 
       <AddToCartButton product={product} />
