@@ -7,9 +7,12 @@ import {
   checkoutFormSchema,
   type CheckoutFormValues,
 } from "@/lib/validation/checkoutForm";
+import useCartStore from "@/stores/cartStore";
 
 export default function CheckoutForm() {
   const router = useRouter();
+  const clearCart = useCartStore((state) => state.clearCart);
+
   const {
     register,
     handleSubmit,
@@ -20,7 +23,7 @@ export default function CheckoutForm() {
   });
 
   const onSubmit = (data: CheckoutFormValues) => {
-    console.log(data);
+    clearCart();
     router.push("/cart/checkout/success");
   };
 
