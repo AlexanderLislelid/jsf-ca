@@ -2,18 +2,28 @@
 import useCartStore from "@/stores/cartStore";
 import { productToCartItem } from "@/types/cartItem";
 import { Product } from "@/types/product";
+import { useState } from "react";
 
 export default function AddToCartButton({ product }: { product: Product }) {
   const addItem = useCartStore((state) => state.addItem);
 
+  const [justAdded, setJustAdded] = useState(false);
+
+  const handleClick = () => {
+    addItem(productToCartItem(product));
+    setJustAdded(true);
+
+    setTimeout(() => {
+      setJustAdded(false);
+    }, 2000);
+  };
+
   return (
     <button
-      onClick={() => {
-        console.log(product.title, "added to cart");
-        addItem(productToCartItem(product));
-      }}
+      className="bg-gray-900 text-white px-4 py-2 rounded cursor-pointer hover:bg-gray-950 transition-colors"
+      onClick={handleClick}
     >
-      Add to shopping cart
+      {justAdded ? "Added!" : "Add to shopping cart"}
     </button>
   );
 }
