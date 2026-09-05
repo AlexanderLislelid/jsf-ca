@@ -22,7 +22,7 @@ export default function ProductSearch({ products }: { products: Product[] }) {
         value={search}
         onChange={handleSearch}
         placeholder="Search for products"
-        className="px-4 py-2 rounded-md border my-4"
+        className="px-4 py-2 rounded-md border my-4 bg-white"
       />
       {filteredProducts.length === 0 ? (
         <p>No available products named {search}</p>
