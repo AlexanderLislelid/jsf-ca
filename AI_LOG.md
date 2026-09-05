@@ -21,7 +21,7 @@ subsets: ["latin"],
 
 - Asked for suggestion on discount icon to use with my discount percentage display on product cards.
 
-* Learned that I already had lucide-react (a React icon library) installed in the project, ready to use.. I didn't know this beforehand.
+* Learned that I already had lucide-react (a React icon library) installed in the project, ready to use.. I didn't know this beforehand. (05.09.26 just figured out it came packaged with shadcn)
   got suggestion on how to import and use
 
 ## Smoother hover effect on cards
