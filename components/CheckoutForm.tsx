@@ -87,6 +87,49 @@ export default function CheckoutForm() {
         )}
       </div>
 
+      <div className="mb-2">
+        <label htmlFor="zipCode">Zip Code</label>
+        <input
+          type="text"
+          id="zipCode"
+          {...register("zipCode")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.zipCode && (
+          <p id="zipCode-error" role="alert" className="text-sm text-red-600">
+            {errors.zipCode.message}
+          </p>
+        )}
+      </div>
+      <div className="mb-2">
+        <label htmlFor="country">Country</label>
+        <input
+          type="text"
+          id="country"
+          {...register("country")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.country && (
+          <p id="country-error" role="alert" className="text-sm text-red-600">
+            {errors.country.message}
+          </p>
+        )}
+      </div>
+      <div className="mb-2">
+        <label htmlFor="phone">Phone</label>
+        <input
+          type="text"
+          id="phone"
+          {...register("phone")}
+          className="w-full px-4 py-2 rounded-md border"
+        />
+        {errors.phone && (
+          <p id="phone-error" role="alert" className="text-sm text-red-600">
+            {errors.phone.message}
+          </p>
+        )}
+      </div>
+
       <button
         type="submit"
         className="mt-2 px-4 py-2 rounded-md bg-black text-white"
