@@ -27,9 +27,11 @@ async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
         />
       )}
       <div>
-        {/* add logic for price display later */}
-        <p>{product.price}</p>
-        <p>{product.discountedPrice}</p>
+        {product.discountedPrice < product.price ? (
+          <p> On Sale! {product.discountedPrice} kr</p>
+        ) : (
+          <p>{product.price} kr</p>
+        )}
       </div>
       <div className="flex gap-6">
         {product.tags?.map((tag) => (
