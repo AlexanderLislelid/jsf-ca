@@ -21,7 +21,7 @@ export default function CheckoutForm() {
 
   const onSubmit = (data: CheckoutFormValues) => {
     console.log(data);
-    router.push("/checkout/success");
+    router.push("/cart/checkout/success");
   };
 
   return (
