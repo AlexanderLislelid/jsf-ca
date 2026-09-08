@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import Logo from "../Logo";
 import CartItemQty from "../CartItemQty";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Contact", href: "/contact" },
-  { name: "Cart", href: "/cart" },
+  { name: <ShoppingCart />, href: "/cart" },
 ];
 
 export default function Navbar() {
