@@ -8,7 +8,7 @@ export default function CartItemQty() {
   );
 
   return (
-    <span className="relative right-3 bottom-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-[11px] font-bold text-white">
+    <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-[11px] font-bold text-white">
       {numberOfItems}
     </span>
   );
