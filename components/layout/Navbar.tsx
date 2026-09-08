@@ -36,7 +36,7 @@ export default function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="absolute top-16 left-0 w-full bg-gray-50 shadow-lg p-4 sm:hidden z-50">
+        <div className="absolute top-16 left-0 w-full bg-gray-50 shadow-lg p-4 sm:hidden z-50 flex flex-col gap-6">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
 
@@ -44,21 +44,23 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2 transition-colors ${
+                className={`flex items-center transition-colors ${
                   isActive
                     ? "text-blue-500 font-semibold"
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
-                {item.name}
-                {item.href === "/cart" && <CartItemQty />}
+                <span className="flex items-center gap-2">
+                  {item.name}
+                  {item.href === "/cart" && <CartItemQty />}
+                </span>
               </Link>
             );
           })}
         </div>
       )}
       {/* //desktop nav */}
-      <div className="sm:flex gap-4 hidden">
+      <div className="sm:flex gap-6 hidden">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
 
@@ -66,14 +68,16 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-2 transition-colors ${
+              className={`flex items-center transition-colors ${
                 isActive
                   ? "text-blue-500 font-semibold"
                   : "text-gray-500 hover:text-gray-700"
               }`}
             >
-              {item.name}
-              {item.href === "/cart" && <CartItemQty />}
+              <span className="flex items-center gap-2">
+                {item.name}
+                {item.href === "/cart" && <CartItemQty />}
+              </span>
             </Link>
           );
         })}
