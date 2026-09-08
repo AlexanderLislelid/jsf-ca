@@ -46,7 +46,7 @@ export default function Navbar() {
                 href={item.href}
                 className={`flex items-center transition-colors ${
                   isActive
-                    ? "text-blue-500 font-semibold"
+                    ? "text-green-600 font-semibold"
                     : "text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -70,7 +70,7 @@ export default function Navbar() {
               href={item.href}
               className={`flex items-center transition-colors ${
                 isActive
-                  ? "text-blue-500 font-semibold"
+                  ? "text-green-600 font-semibold"
                   : "text-gray-500 hover:text-gray-700"
               }`}
             >

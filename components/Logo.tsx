@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Logo() {
   return (
     <Link href="/" className="group flex items-center gap-2.5">
-      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
+      <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-green-700 text-white shadow-sm transition-transform duration-200 group-hover:scale-105">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -21,7 +21,7 @@ export default function Logo() {
       </span>
       <div className="flex flex-col leading-none">
         <span className="text-2xl font-bold tracking-tight text-black">
-          Next<span className="text-blue-600">Aisle</span>
+          Next<span className="text-green-700">Aisle</span>
         </span>
         <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">
           Webshop
