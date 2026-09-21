@@ -97,7 +97,7 @@ export default function CartPage() {
             </p>
             <div className="flex flex-col gap-2 mt-6 items-center font-semibold">
               <Link
-                className="bg-gray-900 p-2 rounded hover:bg-black text-white w-full text-center"
+                className="bg-gray-900 p-2 rounded-md hover:bg-black text-white w-full text-center"
                 href={"cart/checkout"}
               >
                 Checkout
