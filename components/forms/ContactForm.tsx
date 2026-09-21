@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -8,6 +9,8 @@ import {
 } from "@/lib/validation/contactForm";
 
 export default function ContactForm() {
+  const [sent, setSent] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -19,6 +22,8 @@ export default function ContactForm() {
 
   const onSubmit = (data: ContactFormValues) => {
     console.log(data);
+    setSent(true);
+    setTimeout(() => setSent(false), 2000);
   };
 
   return (
@@ -87,8 +92,11 @@ export default function ContactForm() {
         )}
       </div>
 
-      <button type="submit" className="mt-2 px-4 py-2 rounded-md">
-        Send
+      <button
+        type="submit"
+        className="mt-2 px-4 py-2 rounded-md bg-gray-900 text-white hover:bg-black font-medium"
+      >
+        {sent ? "Message sent" : "Send"}
       </button>
     </form>
   );
