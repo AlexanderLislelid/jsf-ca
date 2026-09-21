@@ -19,7 +19,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
-    console.log("menu is", !open);
   };
 
   return (

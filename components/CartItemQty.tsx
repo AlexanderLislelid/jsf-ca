@@ -7,6 +7,8 @@ export default function CartItemQty() {
     state.items.reduce((sum, item) => sum + item.quantity, 0),
   );
 
+  if (numberOfItems === 0) return null;
+
   return (
     <span className="flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-[11px] font-bold text-white">
       {numberOfItems}
