@@ -38,7 +38,7 @@ export default function ContactForm() {
           type="text"
           id="fullname"
           {...register("fullName")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.fullName && (
           <p id="fullname-error" role="alert" className="text-sm text-red-600">
@@ -53,7 +53,7 @@ export default function ContactForm() {
           type="text"
           id="subject"
           {...register("subject")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.subject && (
           <p id="subject-error" role="alert" className="text-sm text-red-600">
@@ -68,7 +68,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           {...register("email")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.email && (
           <p id="email-error" role="alert" className="text-sm text-red-600">
@@ -83,7 +83,7 @@ export default function ContactForm() {
           id="message"
           rows={5}
           {...register("message")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.message && (
           <p id="message-error" role="alert" className="text-sm text-red-600">

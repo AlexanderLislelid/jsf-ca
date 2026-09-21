@@ -39,7 +39,7 @@ export default function CheckoutForm() {
           type="text"
           id="firstName"
           {...register("firstName")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.firstName && (
           <p id="firstName-error" role="alert" className="text-sm text-red-600">
@@ -54,7 +54,7 @@ export default function CheckoutForm() {
           type="text"
           id="lastName"
           {...register("lastName")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.lastName && (
           <p id="lastName-error" role="alert" className="text-sm text-red-600">
@@ -69,7 +69,7 @@ export default function CheckoutForm() {
           type="email"
           id="email"
           {...register("email")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.email && (
           <p id="email-error" role="alert" className="text-sm text-red-600">
@@ -84,7 +84,7 @@ export default function CheckoutForm() {
           type="text"
           id="address"
           {...register("address")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.address && (
           <p id="address-error" role="alert" className="text-sm text-red-600">
@@ -99,7 +99,7 @@ export default function CheckoutForm() {
           type="text"
           id="zipCode"
           {...register("zipCode")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.zipCode && (
           <p id="zipCode-error" role="alert" className="text-sm text-red-600">
@@ -113,7 +113,7 @@ export default function CheckoutForm() {
           type="text"
           id="country"
           {...register("country")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.country && (
           <p id="country-error" role="alert" className="text-sm text-red-600">
@@ -127,7 +127,7 @@ export default function CheckoutForm() {
           type="text"
           id="phone"
           {...register("phone")}
-          className="w-full px-4 py-2 rounded-md border"
+          className="w-full px-4 py-2 rounded-md border bg-white"
         />
         {errors.phone && (
           <p id="phone-error" role="alert" className="text-sm text-red-600">
