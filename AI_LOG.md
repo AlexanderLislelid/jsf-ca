@@ -50,3 +50,11 @@ subsets: ["latin"],
 * Learned that if i wanted to programatically navigate a user I should use useRouter().push() inside my onsubmit function
 
   05.09.26
+
+## Updating 404 page
+
+- asked for a reminder on how to update the standard 404 page.
+
+* was reminded about creating not-found.tsx in app folder
+
+  21.09.26
