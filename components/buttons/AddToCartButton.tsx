@@ -20,7 +20,7 @@ export default function AddToCartButton({ product }: { product: Product }) {
 
   return (
     <button
-      className="bg-gray-900 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-gray-950 transition-colors"
+      className="bg-gray-900 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-black font-medium"
       onClick={handleClick}
     >
       {justAdded ? "Added!" : "Add to shopping cart"}
