@@ -66,3 +66,11 @@ subsets: ["latin"],
 * Got text describing the web store.
 
   22.09.26
+
+## Readme.md
+
+- asked for a boilerplate readme file that I could add to.
+
+* Got ready to use template.
+
+  22.09.26
