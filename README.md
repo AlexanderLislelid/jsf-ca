@@ -1,10 +1,10 @@
-# Project Name
+# Next-Aisle
 
-Short one- or two-sentence description of what this project does and who it's for.
+Next-Aisle is an online store built with Next.js where users can browse products, view product details and reviews, manage a shopping cart, and check out.
 
 ## Overview
 
-A brief overview of the project — the problem it solves, the key features, and any relevant background (e.g. course assignment context).
+Next-Aisle is a course assignment for Noroff's JavaScript Frameworks course. It's an e-commerce front end that consumes the [Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop) to display a product catalogue with search, individual product pages with ratings and reviews, a persistent shopping cart, and a checkout flow with form validation.
 
 ## Tech Stack
 
@@ -12,30 +12,25 @@ A brief overview of the project — the problem it solves, the key features, and
 - [React](https://react.dev)
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Zustand](https://zustand-demo.pmnd.rs) — state management
+- [shadcn/ui](https://ui.shadcn.com) — UI components
+- [Zustand](https://zustand-demo.pmnd.rs) — state management (shopping cart)
 - [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev) — forms & validation
+- [Lucide](https://lucide.dev) — icons
+- [Noroff Online Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop) — product data
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (version)
-- npm / yarn / pnpm
+- Node.js 20 or later
+- npm
 
 ### Installation
 
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/AlexanderLislelid/jsf-ca.git
+cd jsf-ca
 npm install
-```
-
-### Environment Variables
-
-Create a `.env.local` file in the root directory and add any required variables:
-
-```bash
-NEXT_PUBLIC_API_URL=
 ```
 
 ### Running the Development Server
@@ -59,21 +54,43 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 
 ```
 app/
-├── about/
-├── cart/
-│   └── checkout/
-├── contact/
+├── about/                  # About page
+├── cart/                   # Cart page
+│   └── checkout/           # Checkout page with form
+│       └── success/        # Order confirmation page
+├── contact/                # Contact page with form
 ├── product/
-│   └── [id]/
-├── layout.tsx
-└── page.tsx
+│   └── [id]/                # Product detail page
+├── layout.tsx                # Root layout (Navbar/Footer)
+└── page.tsx                  # Home page (product listing/search)
+
+components/
+├── buttons/                  # AddToCartButton
+├── cards/                    # ProductCard
+├── forms/                    # CheckoutForm, ContactForm
+├── layout/                   # Navbar, Footer
+├── ui/                       # shadcn/ui components
+├── Logo.tsx
+├── ProductSearch.tsx
+└── Search.tsx
+
+stores/
+└── cartStore.ts               # Zustand shopping cart store
+
+lib/
+├── utils.ts
+└── validation/                 # Zod schemas for forms
 ```
 
 ## Features
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
+- [x] Product listing with search
+- [x] Product detail page with ratings and reviews
+- [x] Shopping cart with persisted state (Zustand)
+- [x] Checkout flow with form validation (React Hook Form + Zod)
+- [x] Contact form
+- [x] About page
+- [x] Custom 404 page
 
 ## Deployment
 
@@ -81,7 +98,7 @@ This app can be deployed on [Vercel](https://vercel.com/new) or any platform tha
 
 ## License
 
-Specify a license, or note this is a course assignment / not licensed for reuse.
+This project was created as a course assignment for Noroff and is not licensed for reuse.
 
 ## Author
 
