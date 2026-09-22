@@ -58,3 +58,11 @@ subsets: ["latin"],
 * was reminded about creating not-found.tsx in app folder
 
   21.09.26
+
+## About page
+
+- asked AI to write a few paragraphs on the about page
+
+* Got text describing the web store.
+
+  22.09.26
