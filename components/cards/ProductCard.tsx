@@ -63,10 +63,10 @@ function ProductCard({
               {hasDiscount ? (
                 <>
                   <span className="text-sm text-gray-500 line-through">
-                    {price}
+                    {price}kr
                   </span>
                   <span className="text-lg font-bold text-green-600">
-                    {discountedPrice}
+                    {discountedPrice}kr
                   </span>
                 </>
               ) : (
