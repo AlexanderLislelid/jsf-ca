@@ -14,6 +14,7 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
@@ -23,6 +24,7 @@ export default function ContactForm() {
   const onSubmit = (data: ContactFormValues) => {
     console.log(data);
     setSent(true);
+    reset();
     setTimeout(() => setSent(false), 2000);
   };
 
