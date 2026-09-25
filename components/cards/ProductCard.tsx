@@ -51,8 +51,16 @@ function ProductCard({
           <CardHeader className="gap-1 px-3">
             <CardTitle className="line-clamp-1 mt-2">{title}</CardTitle>
             <span className="flex items-center gap-1 text-sm text-muted-foreground">
-              <Star className="size-3.5 fill-yellow-400 text-yellow-400" />
-              {rating.toFixed(1)}
+              {rating <= 0 ? (
+                <p className="text-sm text-muted-foreground italic">
+                  No rating
+                </p>
+              ) : (
+                <>
+                  <Star className="size-3.5 fill-yellow-400 text-yellow-400" />
+                  {rating.toFixed(1)}
+                </>
+              )}
             </span>
           </CardHeader>
           <CardContent className="flex flex-col flex-1 px-3 pb-3">
@@ -70,7 +78,9 @@ function ProductCard({
                   </span>
                 </>
               ) : (
-                <span className="text-lg font-bold text-gray-800">{price}</span>
+                <span className="text-lg font-bold text-gray-800">
+                  {price}kr
+                </span>
               )}
             </div>
           </CardContent>
