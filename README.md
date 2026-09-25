@@ -22,7 +22,7 @@ Next-Aisle is a course assignment for Noroff's JavaScript Frameworks course. It'
 
 ### Prerequisites
 
-- Node.js 20 or later
+- Node.js 20.9.0 or later
 - npm
 
 ### Installation
@@ -60,26 +60,34 @@ app/
 │       └── success/        # Order confirmation page
 ├── contact/                # Contact page with form
 ├── product/
-│   └── [id]/                # Product detail page
-├── layout.tsx                # Root layout (Navbar/Footer)
-└── page.tsx                  # Home page (product listing/search)
+│   └── [id]/               # Product detail page
+├── globals.css             # Global styles (Tailwind)
+├── layout.tsx              # Root layout (Navbar/Footer)
+├── loading.tsx             # Loading UI
+├── not-found.tsx           # Custom 404 page
+└── page.tsx                # Home page (product listing/search)
 
 components/
-├── buttons/                  # AddToCartButton
-├── cards/                    # ProductCard
-├── forms/                    # CheckoutForm, ContactForm
-├── layout/                   # Navbar, Footer
-├── ui/                       # shadcn/ui components
+├── buttons/                # AddToCartButton
+├── cards/                  # ProductCard
+├── forms/                  # CheckoutForm, ContactForm
+├── layout/                 # Navbar, Footer
+├── ui/                     # shadcn/ui components
+├── CartItemQty.tsx         # Quantity controls for cart items
 ├── Logo.tsx
 ├── ProductSearch.tsx
 └── Search.tsx
 
 stores/
-└── cartStore.ts               # Zustand shopping cart store
+└── cartStore.ts            # Zustand shopping cart store
 
 lib/
 ├── utils.ts
-└── validation/                 # Zod schemas for forms
+└── validation/             # Zod schemas for forms
+
+types/
+├── cartItem.ts
+└── product.ts
 ```
 
 ## Features
