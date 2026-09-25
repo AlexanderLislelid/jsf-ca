@@ -44,6 +44,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={() => setOpen(false)}
                 className={`flex items-center transition-colors ${
                   isActive
                     ? "text-green-600 font-semibold"
