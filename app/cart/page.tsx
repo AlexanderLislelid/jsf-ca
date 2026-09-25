@@ -15,7 +15,7 @@ export default function CartPage() {
   );
 
   return (
-    <div className="mt-40 px-4">
+    <div className="mt-20 px-4">
       {items.length === 0 ? (
         <div className="flex flex-col items-center gap-6">
           <h2 className="text-xl font-bold text-center">

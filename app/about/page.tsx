@@ -1,9 +1,12 @@
+import { Info } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col gap-4 mt-20 items-center max-w-2xl mx-auto px-4 text-center">
-      <h1 className="text-2xl font-bold px-4">About Us</h1>
+    <div className="flex flex-col gap-4 mt-20 items-center max-w-2xl mx-auto px-10 text-center">
+      <h1 className="text-2xl font-bold px-4 flex items-center justify-center gap-2">
+        About Us <Info className="text-green-600" />
+      </h1>
       <p>
         Next-Aisle is an online store built for people who want a simple,
         no-fuss shopping experience. We bring together a wide range of products
